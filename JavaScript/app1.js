@@ -150,6 +150,32 @@ animal1.animalSound();
 animal2.animalSound(); //? Bu zaman Dog classinda olan metod isleyecek cunki kodu run edende birinci extends olana baxir eger o metod onun daxilinde varsa onu calisdirir yoxduras parentine baxir ve ordakini isledir. Bu ise polymorphismdir.
 
 
+//! Practice
 
+let lists = document.querySelector(".lists-container");
 
+class List {
+    constructor(list){
+        this.list = list;
+        this.listsArray = [
+            "Amir",
+            "Yunis",
+            "Elvin",
+            "Elchin"
+        ];
+    }
+    addElement(list){
+        let li = document.createElement("li");
+        li.textContent = list;
+        lists.appendChild(li);
+    }
+    removeElement(index){
+        this.listsArray.splice(index, 1);
+    }
+}
 
+let newList = new List();
+newList.listsArray.forEach(element => { 
+    lists.innerHTML += `<li>${element}</li>`;
+})
+newList.addElement("samir");
