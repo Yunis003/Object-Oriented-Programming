@@ -1,0 +1,14 @@
+1. Nəyə görə this açar sözündən istifadə edirik? İşləmə prinsipi necə baş verir?
+this açar sözü burada yeni yaradılan obyektin daxilində nələrin doldurulacağını bildirmək üçün istifadə olunur. Yəni neü-dən istifadə etdiyimiz anda yaradılan obyektin
+daxilində this-lə yazdığımız dəyərlərin hamısı əlavə olunur.
+
+2. Object.getPrototypeOf(obj) və Class.prototype nə işə yarayır?
+Class prototype yaratdığımız klasın tipinin nə olduğunu bzə geri qaytarır (yəni obyekt)ç həmçinin digəridə yaratdığımız dəyərin hansı tipdə olduğunu bizə geri qaytarır. Bunlardan
+istifadə edərək bərabərliklər qurmaq olar.
+
+3. Əgər yeni bir dəyər yaradarkən new açar sözündən istifadə edərək yaradırıqsa onun daxilində constructor() metodu yazmışıqsa həmin funksiya dərhal işə düşəcək. Yəni əgər
+constructor daxilində hər hansısa bir console.log() və ya digər görünəcək əməliyyat varsa həmən terminalda görünəcək. Bu klaslara aid olan xüsusi metod sayəsində baş verir.
+
+4. Static tam olaraq nedir?
+
+

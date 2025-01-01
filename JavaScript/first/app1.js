@@ -20,7 +20,7 @@ console.log(newUser);
 console.log(newUser.introduceSelf());
 //? console.log(newUser.#privateMethod()); This will give an error because it is a private method. This method only can be used in the another method or in the class.
 
-// Let' think that we want to create a new class with sae parameter as User but we want to add new parameters to it. If we want to do this, we can use super() method.
+// Let' think that we want to create a new class with same parameter as User but we want to add new parameters to it. If we want to do this, we can use super() method.
 class User2 extends User {
     constructor(name, surName, age, email, car, brand){
         super(name, surName, age, email);
@@ -168,9 +168,6 @@ class List {
         let li = document.createElement("li");
         li.textContent = list;
         lists.appendChild(li);
-    }
-    removeElement(index){
-        this.listsArray.splice(index, 1);
     }
 }
 
