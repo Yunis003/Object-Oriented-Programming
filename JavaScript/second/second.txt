@@ -10,5 +10,12 @@ istifadə edərək bərabərliklər qurmaq olar.
 constructor daxilində hər hansısa bir console.log() və ya digər görünəcək əməliyyat varsa həmən terminalda görünəcək. Bu klaslara aid olan xüsusi metod sayəsində baş verir.
 
 4. Static tam olaraq nedir?
+static açar sözü klass daxilində hər hansısa metodun və ya dəyərin qarşısında yaza bilərik. Bundan istifadə etdikdə yazdığımız metod və ya dəyər artıq obyektə deyil, class-a 
+aid olur. Yəni yaratdığımız obyektdən istifadə edərək, yazdığımız class-ın daxilində olan static vasitəsi ilə yaradılmış hər hansısa bir dəyərdən istifadə edə bilmərik, çünki 
+static açar sözü sadəcə class-a xasdır və onun vasitəsi ilə işləyir.
 
+5. Static nə üçün istifadə olunur?
+static-dən istifadə o zamanlarda edə bilərik ki, tutaq ki, hər hansısa bir əməliyyat etmək istəyirik lakin bu əməliyyat ümumi class-a təsir etməlidir, yəni class-dan istifadə edərək
+yaratdığımız sadəcə 1 obyektə yox. Bu zaman static-dən istifadə edərik və yazdığımız hər bir kod ümumi bütün obyektlərə təsir etmiş olacaq.
 
+6. super tam olaraq nə işə yarayır? İnheritance niyə vacibdir?
