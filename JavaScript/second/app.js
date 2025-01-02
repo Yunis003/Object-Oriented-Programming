@@ -30,5 +30,4 @@ class User {
     }
 }
 let newUser = new User()
-// newUser.sum(5,2) islemeyecek
-User.sum(5,2)
+newUser.sum(5,2)
