@@ -124,41 +124,59 @@
 
 //! another simple task
 
+// Task: Create a "Bank Account" System
+
 class BankAccount{
     constructor(accountHolder, balance = 0){
         this.accountHolder = accountHolder;
         this.balance = balance;
     }
     deposit(amount){
-        balance += amount;
+        this.balance += amount;
     }
     withdraw(amount){
-        balance -= amount;
+        if (this.balance >= 0){
+            this.balance -= amount;
+            console.log(this.balance)
+        }
+        else{
+            console.log("There is not enough money in your bank account.");
+        }
     }
     getBalance(){
-        console.log(this.balance);
+        console.log("Your current balance is " + this.balance);
     }
 }
 
 class SavingsAccount extends BankAccount{
-   constructor(interestRate = 0.05, balance){
-    super(this.balance, this.deposit);
-    this.interestRate = interestRate;
-   }
-   addInterest(interest){
-    this.balance += interest;
-   }
-}
-class CheckingAccount extends BankAccount{
-    constructor(overdraftLimit = 0){
-        this.overdraftLimit = overdraftLimit;
+    constructor(accountHolder, balance, interestRate = 0.05){
+        super(accountHolder, balance);
+        this.interestRate = interestRate;
+    }
+    addInterest(){
+        this.balance += this.interestRate;
     }
 }
-const savings = new SavingsAccount("alice", 0, 0.1);
+
+class CheckingAccount extends BankAccount{
+    constructor(accountHolder, balance, overdraftLimit = 0){
+        super(accountHolder, balance);
+        this.overdraftLimit = overdraftLimit;
+    }
+    withdraw(amount){
+        super.withdraw(amount);
+        console.log("After the withdrawing your balance is: " + this.balance)
+    }
+}
+
+const savings = new SavingsAccount("Alice", 0, 0.1);
 savings.deposit(1000);
-console.log(savings.getBalance()); //1000
+savings.getBalance();
+savings.addInterest();
+savings.getBalance();
 
-
+const checking = new CheckingAccount('Alice', 0,50);
+checking.withdraw(150);
 
 
 
