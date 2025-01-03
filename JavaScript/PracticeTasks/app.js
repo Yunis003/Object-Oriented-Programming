@@ -92,54 +92,95 @@
 
 // Task: Create a "Bank Account" System
 
-class BankAccount{
-    constructor(accountHolder, balance = 0){
-        this.accountHolder = accountHolder;
-        this.balance = balance;
+// class BankAccount{
+//     constructor(accountHolder, balance = 0){
+//         this.accountHolder = accountHolder;
+//         this.balance = balance;
+//     }
+//     deposit(amount){
+//         this.balance += amount;
+//     }
+//     withdraw(amount){
+//         if (this.balance >= 0){
+//             this.balance -= amount;
+//             console.log(this.balance)
+//         }
+//         else{
+//             console.log("There is not enough money in your bank account.");
+//         }
+//     }
+//     getBalance(){
+//         console.log("Your current balance is " + this.balance);
+//     }
+// }
+
+// class SavingsAccount extends BankAccount{
+//     constructor(accountHolder, balance, interestRate = 0.05){
+//         super(accountHolder, balance);
+//         this.interestRate = interestRate;
+//     }
+//     addInterest(){
+//         this.balance += this.interestRate;
+//     }
+// }
+
+// class CheckingAccount extends BankAccount{
+//     constructor(accountHolder, balance, overdraftLimit = 0){
+//         super(accountHolder, balance);
+//         this.overdraftLimit = overdraftLimit;
+//     }
+//     withdraw(amount){
+//         super.withdraw(amount);
+//         console.log("After the withdrawing your balance is: " + this.balance)
+//     }
+// }
+
+// const savings = new SavingsAccount("Alice", 0, 0.1);
+// savings.deposit(1000);
+// savings.getBalance();
+// savings.addInterest();
+// savings.getBalance();
+
+// const checking = new CheckingAccount('Alice', 0,50);
+// checking.withdraw(150);
+
+
+//! another task
+
+// Create a library system
+
+class Book{
+    constructor(title, author, isCheckedOut = false){
+        this.title = title;
+        this.author = author;
+        this.isCheckedOut = isCheckedOut;
     }
-    deposit(amount){
-        this.balance += amount;
+    checkOut(){
+       this.isCheckedOut = true;
     }
-    withdraw(amount){
-        if (this.balance >= 0){
-            this.balance -= amount;
-            console.log(this.balance)
-        }
-        else{
-            console.log("There is not enough money in your bank account.");
-        }
+    checkIn(){
+        this.isCheckedOut = false;
     }
-    getBalance(){
-        console.log("Your current balance is " + this.balance);
+    getStatus(){
+        console.log(this.isCheckedOut ? "Book is checked out" : "Book is not checked out")
+    } 
+}
+class Library{
+    books = ['Amfibiya Adam', 'Gorunmez Adam', 'Qar Adam', 'Don Kixot'];
+    constructor(name, books){
+        this.name = name;
+        this.books =books;
+    }
+    addBook(book){
+        this.books.push(book);
+    }
+    listBooks(){
+
+    }
+    checkedOutBook(title){
+        
+    }
+    checkedInBook(title){
+
     }
 }
-
-class SavingsAccount extends BankAccount{
-    constructor(accountHolder, balance, interestRate = 0.05){
-        super(accountHolder, balance);
-        this.interestRate = interestRate;
-    }
-    addInterest(){
-        this.balance += this.interestRate;
-    }
-}
-
-class CheckingAccount extends BankAccount{
-    constructor(accountHolder, balance, overdraftLimit = 0){
-        super(accountHolder, balance);
-        this.overdraftLimit = overdraftLimit;
-    }
-    withdraw(amount){
-        super.withdraw(amount);
-        console.log("After the withdrawing your balance is: " + this.balance)
-    }
-}
-
-const savings = new SavingsAccount("Alice", 0, 0.1);
-savings.deposit(1000);
-savings.getBalance();
-savings.addInterest();
-savings.getBalance();
-
-const checking = new CheckingAccount('Alice', 0,50);
-checking.withdraw(150);
