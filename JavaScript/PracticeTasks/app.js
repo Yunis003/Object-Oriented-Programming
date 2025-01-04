@@ -156,31 +156,33 @@ class Book{
         this.isCheckedOut = isCheckedOut;
     }
     checkOut(){
-       this.isCheckedOut = true;
+        this.isCheckedOut = true;
     }
     checkIn(){
         this.isCheckedOut = false;
     }
     getStatus(){
-        console.log(this.isCheckedOut ? "Book is checked out" : "Book is not checked out")
-    } 
+        console.log(this.isCheckedOut == true ? "Book is checked out." : "Book is avaliable");
+    }
 }
+
 class Library{
-    books = ['Amfibiya Adam', 'Gorunmez Adam', 'Qar Adam', 'Don Kixot'];
-    constructor(name, books){
+    constructor(name){
         this.name = name;
-        this.books =books;
+        this.books = [];
     }
     addBook(book){
         this.books.push(book);
     }
-    listBooks(){
-
-    }
-    checkedOutBook(title){
+    checkOutBook(title){
         
     }
-    checkedInBook(title){
-
+    checkInBook(title){
+        
+    }
+    listBooks(){
+        this.books.forEach((book)=>{
+            console.log(book.title + "by" + book.author + "-" + book.isCheckedOut ? "Checked out" : "Avavliable")
+        })
     }
 }
