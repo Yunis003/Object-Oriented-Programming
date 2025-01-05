@@ -149,46 +149,121 @@
 
 // Create a library system
 
-class Book{
-    constructor(title, author, isCheckedOut = false){
-        this.title = title;
-        this.author = author;
-        this.isCheckedOut = isCheckedOut;
+// class Book{
+//     constructor(title, author, isCheckedOut = false){
+//         this.title = title;
+//         this.author = author;
+//         this.isCheckedOut = isCheckedOut;
+//     }
+//     checkOut(){
+//         this.isCheckedOut = true;
+//     }
+//     checkIn(){
+//         this.isCheckedOut = false;
+//     }
+//     getStatus(){
+//         console.log(this.isCheckedOut == true ? "Book is checked out." : "Book is avaliable");
+//     }
+// }
+
+// class Library{
+//     constructor(name){
+//         this.name = name;
+//         this.books = [];
+//     }
+//     addBook(book){
+//         this.books.push(book);
+//     }
+//     listBooks(){
+//             this.books.forEach((book)=>{
+//                 console.log(book.title + " " + book.author +  " " + (book.isCheckedOut ? 'Checked Out' : 'Avaliable'));
+//             })
+//     }
+// }
+
+// const library1 = new Library("City Book Center");
+
+// const newBook1 = new Book("Harry Potter GPT", "J.K.Rovling", true);
+// newBook1.checkIn();
+// const newBook2 = new Book("Harry Potter Gemini", "J.K.Rovling", false);
+
+
+// library1.addBook(newBook1);
+// library1.addBook(newBook2);
+// library1.listBooks()
+// console.log(library1)
+
+//! another task
+
+// School management system
+
+class Person{
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
     }
-    checkOut(){
-        this.isCheckedOut = true;
-    }
-    checkIn(){
-        this.isCheckedOut = false;
-    }
-    getStatus(){
-        console.log(this.isCheckedOut == true ? "Book is checked out." : "Book is avaliable");
+    introduce(){
+        console.log("Hello my name is " + this.name + " " + "and I am " + this.age + " " + "years old.");
     }
 }
 
-class Library{
+class Student extends Person{
+    constructor(name, age, grade){
+        super(name, age);
+        this.grade = grade;
+    }
+    study(){
+        console.log(this.name + " is studying");
+    }
+}
+
+class Teacher extends Person{
+    constructor(name, age, subject){
+        super(name, age);
+        this.subject = subject;
+    }
+    teach(){
+        console.log(this.name + " is teaching " + this.subject);
+    }
+}
+
+class School{
     constructor(name){
         this.name = name;
-        this.books = [];
+        this.students = [];
+        this.teachers = [];
     }
-    addBook(book){
-        this.books.push(book);
+    addStudent(student){
+        this.students.push(student);
     }
-    listBooks(){
-            this.books.forEach((book)=>{
-                console.log(book.title + " " + book.author +  " " + (book.isCheckedOut ? 'Checked Out' : 'Avaliable'));
-            })
+    addTeacher(teacher){
+        this.teachers.push(teacher);
+    }
+    listPeople(){
+        this.students.forEach((student, index)=>{
+            console.log(`${index + 1} Student: ${student.name}`)
+        })
+        this.teachers.forEach((teacher, index)=>{
+            console.log(`${index + 1} Teacher: ${teacher.name}`)
+        })
     }
 }
 
-const library1 = new Library("City Book Center");
+const student1 = new Student("Alice", 15, 10);
+const student2 = new Student("Bob", 16, 11);
+const teacher1 = new Teacher("Mrs. Smith", 35, "Math");
+const teacher2 = new Teacher("Mr. Johnson", 40, "History");
 
-const newBook1 = new Book("Harry Potter GPT", "J.K.Rovling", true);
-newBook1.checkIn();
-const newBook2 = new Book("Harry Potter Gemini", "J.K.Rovling", false);
+const school = new School("Green Valley High");
 
+school.addStudent(student1);
+school.addStudent(student2);
+school.addTeacher(teacher1);
+school.addTeacher(teacher2);
 
-library1.addBook(newBook1);
-library1.addBook(newBook2);
-library1.listBooks()
-console.log(library1)
+school.listPeople();
+
+student1.introduce();
+student1.study();    
+teacher1.introduce();
+teacher1.teach();    
