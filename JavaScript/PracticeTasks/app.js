@@ -174,15 +174,21 @@ class Library{
     addBook(book){
         this.books.push(book);
     }
-    checkOutBook(title){
-        
-    }
-    checkInBook(title){
-        
-    }
     listBooks(){
-        this.books.forEach((book)=>{
-            console.log(book.title + "by" + book.author + "-" + book.isCheckedOut ? "Checked out" : "Avavliable")
-        })
+            this.books.forEach((book)=>{
+                console.log(book.title + " " + book.author +  " " + (book.isCheckedOut ? 'Checked Out' : 'Avaliable'));
+            })
     }
 }
+
+const library1 = new Library("City Book Center");
+
+const newBook1 = new Book("Harry Potter GPT", "J.K.Rovling", true);
+newBook1.checkIn();
+const newBook2 = new Book("Harry Potter Gemini", "J.K.Rovling", false);
+
+
+library1.addBook(newBook1);
+library1.addBook(newBook2);
+library1.listBooks()
+console.log(library1)
