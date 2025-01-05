@@ -197,73 +197,78 @@
 
 // School management system
 
-class Person{
-    constructor(name, age){
-        this.name = name;
-        this.age = age;
-    }
-    introduce(){
-        console.log("Hello my name is " + this.name + " " + "and I am " + this.age + " " + "years old.");
-    }
-}
+// class Person{
+//     constructor(name, age){
+//         this.name = name;
+//         this.age = age;
+//     }
+//     introduce(){
+//         console.log("Hello my name is " + this.name + " " + "and I am " + this.age + " " + "years old.");
+//     }
+// }
 
-class Student extends Person{
-    constructor(name, age, grade){
-        super(name, age);
-        this.grade = grade;
-    }
-    study(){
-        console.log(this.name + " is studying");
-    }
-}
+// class Student extends Person{
+//     constructor(name, age, grade){
+//         super(name, age);
+//         this.grade = grade;
+//     }
+//     study(){
+//         console.log(this.name + " is studying");
+//     }
+// }
 
-class Teacher extends Person{
-    constructor(name, age, subject){
-        super(name, age);
-        this.subject = subject;
-    }
-    teach(){
-        console.log(this.name + " is teaching " + this.subject);
-    }
-}
+// class Teacher extends Person{
+//     constructor(name, age, subject){
+//         super(name, age);
+//         this.subject = subject;
+//     }
+//     teach(){
+//         console.log(this.name + " is teaching " + this.subject);
+//     }
+// }
 
-class School{
-    constructor(name){
-        this.name = name;
-        this.students = [];
-        this.teachers = [];
-    }
-    addStudent(student){
-        this.students.push(student);
-    }
-    addTeacher(teacher){
-        this.teachers.push(teacher);
-    }
-    listPeople(){
-        this.students.forEach((student, index)=>{
-            console.log(`${index + 1} Student: ${student.name}`)
-        })
-        this.teachers.forEach((teacher, index)=>{
-            console.log(`${index + 1} Teacher: ${teacher.name}`)
-        })
-    }
-}
+// class School{
+//     constructor(name){
+//         this.name = name;
+//         this.students = [];
+//         this.teachers = [];
+//     }
+//     addStudent(student){
+//         this.students.push(student);
+//     }
+//     addTeacher(teacher){
+//         this.teachers.push(teacher);
+//     }
+//     listPeople(){
+//         this.students.forEach((student, index)=>{
+//             console.log(`${index + 1} Student: ${student.name}`)
+//         })
+//         this.teachers.forEach((teacher, index)=>{
+//             console.log(`${index + 1} Teacher: ${teacher.name}`)
+//         })
+//     }
+// }
 
-const student1 = new Student("Alice", 15, 10);
-const student2 = new Student("Bob", 16, 11);
-const teacher1 = new Teacher("Mrs. Smith", 35, "Math");
-const teacher2 = new Teacher("Mr. Johnson", 40, "History");
+// const student1 = new Student("Alice", 15, 10);
+// const student2 = new Student("Bob", 16, 11);
+// const teacher1 = new Teacher("Mrs. Smith", 35, "Math");
+// const teacher2 = new Teacher("Mr. Johnson", 40, "History");
 
-const school = new School("Green Valley High");
+// const school = new School("Green Valley High");
 
-school.addStudent(student1);
-school.addStudent(student2);
-school.addTeacher(teacher1);
-school.addTeacher(teacher2);
+// school.addStudent(student1);
+// school.addStudent(student2);
+// school.addTeacher(teacher1);
+// school.addTeacher(teacher2);
 
-school.listPeople();
+// school.listPeople();
 
-student1.introduce();
-student1.study();    
-teacher1.introduce();
-teacher1.teach();    
+// student1.introduce();
+// student1.study();    
+// teacher1.introduce();
+// teacher1.teach();    
+
+//! another task
+
+// Online Store Management System
+
