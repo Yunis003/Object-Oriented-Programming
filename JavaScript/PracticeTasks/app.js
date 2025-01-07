@@ -270,5 +270,4 @@
 
 //! another task
 
-// Online Store Management System
 

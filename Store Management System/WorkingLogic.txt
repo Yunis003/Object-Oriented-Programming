@@ -1,0 +1,77 @@
+Create an online store management system that handles products, customers, and orders.
+
+Requirements:
+Product Class:
+
+Properties:
+name (string)
+price (number)
+quantity (number, representing stock)
+Methods:
+reduceStock(amount): Reduces the stock by the given amount.
+increaseStock(amount): Increases the stock by the given amount.
+Customer Class:
+
+Properties:
+name (string)
+email (string)
+cart (array of products the customer wants to buy)
+Methods:
+addToCart(product, quantity): Adds a product to the cart. If the product is already in the cart, update the quantity.
+viewCart(): Displays the cart with products, quantities, and total price.
+Order Class:
+
+Properties:
+customer (the Customer object placing the order)
+items (array of products purchased)
+totalPrice (calculated based on the items and their quantities)
+Methods:
+placeOrder(): Processes the order by reducing the stock of products in the order and calculates the total price.
+Store Class:
+
+Properties:
+name (string)
+products (array of Product objects available in the store)
+customers (array of Customer objects registered in the store)
+orders (array of Order objects)
+Methods:
+addProduct(product): Adds a product to the store.
+registerCustomer(customer): Registers a customer in the store.
+listProducts(): Displays all available products with their names, prices, and stock.
+listOrders(): Displays all completed orders.
+Example Scenario:
+Create a store named "TechMart".
+Add the following products:
+Laptop, $1000, stock: 10
+Smartphone, $500, stock: 20
+Headphones, $100, stock: 50
+Register a customer "Alice" with the email "alice@example.com".
+Alice adds the following items to her cart:
+1 Laptop
+2 Smartphones
+Alice places an order:
+The store reduces the stock of the purchased products.
+The order is recorded with Alice's total price.
+View the store's product list and ensure stock is updated.
+List all completed orders.
+
+    Expected Output Example:
+
+Products in store:
+Laptop - $1000, Stock: 9
+Smartphone - $500, Stock: 18
+Headphones - $100, Stock: 50
+
+Customer's cart:
+1x Laptop - $1000
+2x Smartphone - $1000
+Total: $2000
+
+Order placed successfully!
+
+Orders in store:
+Customer: Alice
+Items:
+- 1x Laptop ($1000)
+- 2x Smartphone ($1000)
+Total Price: $2000
