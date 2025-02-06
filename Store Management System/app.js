@@ -51,7 +51,7 @@ class Store{
         this.customers.push(customer);
     }
     listProducts(){
-        this.products.map((product)=>console.log(product)).join(", ");
+        this.products.map((product)=>console.log(product));
     }
     listOrders(){
         this.orders.map((order)=>console.log(order)).join(", ");
@@ -78,9 +78,9 @@ alice.addToCart(smartphone, 2);
 alice.viewCart();
 
 // Place Order
-const order1 = new Order(alice);
-order1.placeOrder();
-store.orders.push(order1);
+// const order1 = new Order(alice);
+// order1.placeOrder();
+// store.orders.push(order1);
 
 // List Products after Order
 store.listProducts();
